@@ -1,0 +1,120 @@
+pipeline {
+    agent any
+    environment {
+        AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
+        AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
+        AWS_DEFAULT_REGION = "us-east-1"
+    }
+    parameters{
+        choice(name: 'ENVIRONMENT', choices: ['create', 'destroy'],
+        description: 'to destroy or create')
+    }
+
+    stages {
+        stage("Create nginx-conroller") {
+            when {
+                expression { params.ENVIRONMENT == 'create' }
+            }
+            steps {
+                script {
+                    dir('nginx-controller') {
+                       sh "aws eks --region us-east-1 update-kubeconfig --name ogunleye_cluster"
+                        sh "terraform init"
+                        sh "terraform apply -auto-approve"
+                    }
+                }
+            }
+        }
+
+        stage("Create Eks Monitoring Tools") {
+            when {
+                expression { params.ENVIRONMENT == 'create' }
+            }
+            steps {
+                script {
+                    dir('Monitoring') {
+                        sh "terraform init"
+                        sh "terraform apply -auto-approve"
+                    }
+                }
+            }
+        }
+
+        stage("Deploy voting-app to EKS") {
+            when {
+                expression { params.ENVIRONMENT == 'create' }
+            }
+            steps {
+                script {
+                    dir('voting-app') {
+                        sh "kubectl apply -f voting_app.yml"
+                    }
+                }
+            }
+        }
+
+        stage("Deploy sock-shop to EKS") {
+            when {
+                expression { params.ENVIRONMENT == 'create' }
+            }
+            steps {
+                script {
+                    dir('sock-shop') {
+                        sh "kubectl apply -f complete_deployment.yml"
+                    }
+                }
+            }
+        }
+
+        stage("Deploy ingress rule to EKS") {
+            when {
+                expression {params.ENVIRONMENT == 'create'}
+            }
+            steps {
+                script {
+                    dir('ingress') {
+                        sh "terraform init"
+                        sh "terraform apply -auto-approve"
+                    }
+                }
+            }
+        }
+        stage("Destroy nginx-conroller") {
+            when {
+                expression {params.ENVIRONMENT == 'destroy'}
+            }
+            steps {
+                script {
+                    dir('nginx-controller') {
+                        sh "terraform destroy -auto-approve"
+                    }
+                }
+            }
+        }
+        stage("Destroy Monitoring Tools") {
+            when {
+                expression {params.ENVIRONMENT == 'destroy'}
+            }
+            steps {
+                script {
+                    dir('Monitoring') {
+                        sh "terraform destroy -auto-approve"
+                    }
+                }
+            }
+        }
+        stage("Destroy Ingress") {
+            when {
+                expression {params.ENVIRONMENT == 'destroy'}
+            }
+            steps {
+                script {
+                    dir('ingress') {
+                        sh "terraform destroy -auto-approve"
+                    }
+                }
+            }
+        }
+
+    }
+}
