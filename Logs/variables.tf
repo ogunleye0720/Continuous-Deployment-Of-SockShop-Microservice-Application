@@ -1,14 +1,14 @@
-variable "bucket_name" {
-  type = string
-  default = "ogunleye-bucket"
-}
+#variable "bucket_name" {
+  #type = string
+  #default = "ogunleye-bucket"
+#}
 
-variable "key" {
-  type = string
-  default = "flow_logs/terraform.tfstate"
-}
+#variable "key" {
+  #type = string
+  #default = "flow_logs/terraform.tfstate"
+#}
 
-variable "db_state_lock" {
-  type = string
-  default = "state_lock"
-}
+#variable "db_state_lock" {
+  #type = string
+  #default = "state_lock"
+#}
