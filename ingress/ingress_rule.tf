@@ -64,7 +64,7 @@ resource "kubernetes_ingress_v1" "prometheus-ingress" {
     name      = "prometheus"
     namespace = "monitoring"
     labels = {
-      name = "front-end"
+      name = "prometheus-grafana"
     }
     annotations = {
       "kubernetes.io/ingress.class" : "nginx"
@@ -78,7 +78,7 @@ resource "kubernetes_ingress_v1" "prometheus-ingress" {
         path {
           backend {
             service{
-              name = "prometheus"
+              name = "prometheus-grafana"
               port {
                 number = 80
               }
