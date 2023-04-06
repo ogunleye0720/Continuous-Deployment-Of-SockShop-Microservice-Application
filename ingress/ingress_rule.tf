@@ -78,7 +78,7 @@ resource "kubernetes_ingress_v1" "prometheus-ingress" {
         path {
           backend {
             service{
-              name = "front-end"
+              name = "prometheus"
               port {
                 number = 80
               }
