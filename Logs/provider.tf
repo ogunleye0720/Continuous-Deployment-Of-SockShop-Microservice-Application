@@ -6,10 +6,10 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = var.bucket_name 
-    key = var.key 
+    bucket = "ogunleye-bucket"
+    key =  "flow_logs/terraform.tfstate"
     region = "us-east-1"
-    dynamodb_table = var.db_state_lock
+    dynamodb_table = "state_lock"
   }
 }
 
