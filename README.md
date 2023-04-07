@@ -20,7 +20,7 @@ CI/CD pipeline to trigger the build process of the scripts and kubernetes manife
 ## The output of the examination
 
 <ol>
-  <li> The output for Eks_Network, and Eks_Cluster module build success using jenkins
-    <p> ![build-success](images/build-success.JPG) </p>
-  </li>
+  <li> The output for Eks_Network, and Eks_Cluster module build success using jenkins </li>
+![build-success](images/build-success.JPG) 
+    
 </ol>
