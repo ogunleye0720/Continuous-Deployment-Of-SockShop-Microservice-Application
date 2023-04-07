@@ -4,14 +4,14 @@ This repository contains some terraform script to automate the creation of a vir
 CI/CD pipeline to trigger the build process of the scripts and kubernetes manifest files to deploy a sock-shop application, votingapp, and promeheus-grafana.
 
 ## This Repository contains
-- [x] Backend module which creates an S3 and dynamodb to initiate remote state and state-locking.
+- [x] Backend module which creates an S3 bucket and dynamodb to initiate remote state and state-locking.
 - [x] Eks_Network module which creates VPC, 3 Private subnet and three public subnet, nat gateway, internet gateway, and route tables.
 - [x] Eks_Cluster module which creates the Eks cluster, and 3 worker-nodes
-- [x] Jenkins_Server module which creates a vpc, internet gateway, public subnet, route table, security and groups and a t3.medium ec2 ubuntu ec2 instance and a shell script to install java and jenkins.
-- [x] Logs module to create vpc log_flows and logs the information inside and s3 bucket.
-- [x] Monitoring module to launch prometheus-grafana in a namespace inside a worker-node.
-- [x] ingress module to create ingress rules for the cluster
-- [x] nginx-controller module to create a stagnant loadblancer that routes internet traffic to various services within the worker-nodes in diffrent namespaces.
+- [x] Jenkins_Server module which creates a vpc, internet gateway, public subnet, route table, security groups and a t3.medium ubuntu ec2 instance and a shell script to install java and jenkins.
+- [x] Logs module to create vpc log_flows and log the information inside an s3 bucket.
+- [x] Monitoring module to launch prometheus-grafana in a monitoring namespace inside a worker-node.
+- [x] ingress module to create ingress rules to expose the backend services to the internet traffics.
+- [x] nginx-controller module to create a stagnant loadblancer that routes internet traffic to various services within the worker-nodes in diffrent namespaces via the ingress.
 - [x] sock-shop folder containing the sock-shop application manifest file.
 - [x] voting-app folder containing the voting application manifest file.
 - [x] infrastructure-jenkinsfile containing jenkins build script for aws inftrastructure.
