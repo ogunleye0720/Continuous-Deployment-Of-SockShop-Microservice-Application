@@ -34,3 +34,19 @@ CI/CD pipeline to trigger the build process of the scripts and kubernetes manife
 - The output for [votingapp.ogunleye1995.me](http://sock-shop.ogunleye1995.me)
 ---
 ![votingapp](images/votingapp.JPG)
+
+- The output for [prometheus.ogunleye1995.me](http://prometheus.ogunleye1995.me), visualisation of cluster memory usage, container cpu,and Network pressure
+---
+![container-cpu-usage](images/container-cpu-usage.JPG)
+---
+![container-memory-usage](images/container-memory-usage.JPG)
+---
+![Network pressure](images/grafana-network-presure.JPG)
+
+- The output indicating that the vpc flow logs were sent to the s3 bucket
+---
+![vpcflow_logs](images/flowlogs.JPG)
+---
+- The content of the log file in the s3 bucket
+---
+![vpcflow_logs](images/flowlogs.JPG)
