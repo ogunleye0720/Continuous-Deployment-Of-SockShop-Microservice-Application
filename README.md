@@ -47,6 +47,6 @@ CI/CD pipeline to trigger the build process of the scripts and kubernetes manife
 ---
 ![vpcflow_logs](images/flowlogs.JPG)
 ---
-- The content of the log file in the s3 bucket
+- The log status
 ---
-![vpcflow_logs](images/flowlogs.JPG)
+![log_status](images/log_status.JPG)
