@@ -22,3 +22,15 @@ CI/CD pipeline to trigger the build process of the scripts and kubernetes manife
 - The output of jenkins build success for Eks_Network and Eks_Cluster modules
 ---
 ![build-success](images/build-success.JPG) 
+
+- The output of jenkins build success for Monitoring tools, ingress, nginx-controller, sock-shop and voting app manifests
+---
+![deployment-build-success](images/jenkins-deployment-successful.JPG)
+
+- The output for [sock-shop.ogunleye1995.me](http://sock-shop.ogunleye1995.me)
+---
+![sock-shop](images/sock-shop.JPG)
+
+- The output for [votingapp.ogunleye1995.me](http://sock-shop.ogunleye1995.me)
+---
+![votingapp](images/votingapp.JPG)
