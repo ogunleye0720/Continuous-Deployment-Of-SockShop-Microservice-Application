@@ -12,7 +12,7 @@ CI/CD pipeline to trigger the build process of the scripts and kubernetes manife
 - [x] Monitoring module to launch prometheus-grafana in a monitoring namespace inside a worker-node.
 - [x] ingress module to create ingress rules to expose the backend services to the internet traffics.
 - [x] nginx-controller module to create a stagnant loadblancer that routes internet traffic to various services within the worker-nodes in diffrent namespaces via the ingress.
-- [x] sock-shop folder containing the sock-shop application manifest file.
+- [x] sock-shop folder containing the sock-shop micro-service application manifest file.
 - [x] voting-app folder containing the voting application manifest file.
 - [x] infrastructure-jenkinsfile containing jenkins build script for aws inftrastructure.
 - [x] jenkinsfile containing jenkins build script for application deployment, ingress and nginx-controller.
