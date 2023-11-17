@@ -1,7 +1,6 @@
-# Altschool_third_semester-exam
-This is a repository containing the solution to my third semester examination at altschool.
+# Continuous Deployment of Sock-Shop Microservice Application With Terraform and Jenkins.
 This repository contains some terraform script to automate the creation of a virtual private cloud (vpc), Eks cluster, worker nodes, and jenkins server to create a 
-CI/CD pipeline to trigger the build process of the scripts and kubernetes manifest files to deploy a sock-shop application, votingapp, and promeheus-grafana.
+Continuous Deployment pipeline to trigger the build process of the scripts and kubernetes manifest files to deploy a sock-shop application, votingapp, Into an EKS Cluster on AWS.
 
 ## This Repository contains
 - [x] Backend module which creates an S3 bucket and dynamodb to initiate remote state and state-locking.
@@ -16,6 +15,13 @@ CI/CD pipeline to trigger the build process of the scripts and kubernetes manife
 - [x] voting-app folder containing the voting application manifest file.
 - [x] infrastructure-jenkinsfile containing jenkins build script for aws inftrastructure.
 - [x] jenkinsfile containing jenkins build script for application deployment, ingress and nginx-controller.
+
+## Tools Used
+- [x] Terraform :- To automate infrastructure on AWS.
+- [x] Jenkins :- To create Continuous Deployment pipeline.
+- [x] Kubernetes :- For Container Orchestration.
+- [x] Prometheus and Grafana :- For Monitoring, Alerting, and Data visualization.
+- [x] S3 Bucket :- For Logging Virtual Private Cloud (VPC)  Traffics.   
 
 ## The output of the examination
 
